@@ -1,0 +1,136 @@
+<!-- En esta plantilla se crea todo el codigo que sera reutilizable en la pagina web-->
+<!doctype html>
+<html lang="Es">
+<!--lang es  para que el navegador reconsca el idioma en el cual esta creada -->
+
+<head>
+	<!--En head tengo  etiquetas meta-->
+	<meta charset="utf-8">
+	<!--permite al navegazdor reconoca caracteres  epeciales -->
+	<meta name="Description" content="">
+	<!--
+									pequeña descirpcion de la pagina aparece en 
+									el bucador cuando se busca -->
+	<title>Tienda y Licores DZ </title>
+	<!--Es importante para posiiconar la pagina en el navegaor -->
+	<meta name="Keywords" content="">
+	<!--palabras claves pero los navegadores ya no las usan-->
+	<meta name="viewport" content="width=device=width , initial-scale=1">
+	<!--Etiqueta importante para que la pagina se ajuste a cualquier dispositivo -->
+	<!--Estilos de bostrap para css-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+	<!-- enlace a css una forma de enlazar en con la llaves-->
+	<!--<link rel="stylesheet" href="static/css/main.css"><!-- enlaza la pagian con los archivos css-->
+	<!--<style>
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	</style>-->
+</head>
+
+<body>
+	<!--aca van las etiquetas de estrucutra-->
+	<!--<header> </header><!-- sirve para trabajar el encabezado de la pagina "debe estar una vez"-->
+	<!--<main> </main>
+	<!--permite agrupar grandes contenidos-->
+	<!--<article></article>
+	<!--permite agrupar pequeños contenidos-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="{{ url_for('home') }}">Tienda y Licores DZ</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+
+				<li class="nav-item active">
+					<a class="nav-link" href="/" active="true">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Productos" active>Productos</a>
+								<!--Lugar de retorno  Nombre del item en la pagina
+					otra forma de redireccionar	
+					<a class="nav-link" href="{{ url_for('Productos')}}">Productos</a>
+					lo que va debtro de las parentesis es el nombre de la funcion declarada en python-->
+				
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Compras">Compras</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/about">about</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/Registro">Registro</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!--<h1>TapisApp</h1><!--Solo para titulos reconmendable uno por pagina por que es la que reastrea los motores de busquedad-->
+	<!--<h2></h2>
+	<!--Para subtitulos pueden existir muchos por que nos de menor relevancia y asi sucesivamente con h3,h4...h6-->
+	<!--<aside></aside>
+	<!--Contenidos relevane s pero no primarios accesos a redes sociales etc-->
+	<!--<footer></footer>
+	<!--Pie de pagina-->
+	<!--<section class="superior"> </section><!--parte la pagina en seciones ideal crear clases por cada secionse crean las secciones que sean necesarias-->
+	<!--<section class="intermedia"> </section>
+
+
+	<!--etiqueta blockquote para citar texto u otras paginas-->
+	<!--<hr> para dividir contenido de parrafo-->
+	<!--etiqueta pre texto predefinifo-->
+	<!---<p>
+		<hr>
+		<pre> </pre>
+		<blockquote></blockquote>
+	</p>
+	<!--etiqueta para parrafos-->
+	<!--<a href="https://www.youtube.com">ir </a>
+	<!--sirve para enlazar a otras paginas-->
+	<!--<em>Texto importante</em>
+	<!--Texto enfatisado muestra en cursiva-->
+
+	<!--<strong>texto en negrita</strong>
+	<!--Reslata con negrita-->
+	<!--<s></s>
+	<!--Texto Tachado-->
+
+	<!--<cite>aldair zemanate</cite>
+	<!--etiqueta porpia para citar-->
+	<!--<abbr></abbr>
+	<!--texto abreviado-->
+	<!--<span></span>
+	<!--sirve para que el css modifique el texto-->
+	<!--<br>
+	<!--salto de linea-->
+
+
+	<!--etiquetas de Listas para menus listado de productos etc-->
+
+	<!--<ol class="Listas"></ol>
+	<!--Lista ordena con esa class puede trabajar en css-->
+	<!--<ul> </ul>
+	<!--lista no ordenada-->
+	<!--<li></li>
+	<!--articlos que van en las listas-->
+	<!--<dl></dl>
+	<!--Lsitas de definicion"poco usadas"-->
+
+	<!--<div></div>
+	<!--Contenedores no es recomendable meter texto dentro de un div-->
+	{% block content%}
+	{% endblock %}
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
